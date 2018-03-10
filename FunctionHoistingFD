@@ -1,0 +1,8 @@
+//函数声明
+function myTest1(){
+    func();
+    function func(){
+        console.log('函数声明是可以提升的');
+    }
+}
+myTest1();   //输出'函数声明是可以提升的'
