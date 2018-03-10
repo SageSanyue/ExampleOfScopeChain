@@ -1,0 +1,15 @@
+var a = 1
+function fn1(){
+    //var a; 变量提升后下数第8句'var a=2'中的a变量声明实际提升到此处，而其赋值留在原地。
+  function fn2(){
+    console.log(a)
+  }
+  function fn3(){
+    var a = 4
+    fn2()
+  }
+  var a = 2  //此处只留下'a=2;'
+  return fn3
+}
+var fn = fn1()
+fn() //调用fn(),按代码书写顺序在'var fn()=fn1()'的时候fn1()函数已经运行一遍了，'a=2'也已经在该函数return fn3之前执行完毕，fn3函数里调用了fn2，而fn2执行打印a的任务。即输出'2'
