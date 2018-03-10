@@ -1,0 +1,8 @@
+var name = '胡桃夹子';
+function changeName(){
+    var name;            //变量name提升到此处
+    console.log(name);   //解析器解析到此行时还不知下一行中的赋值内容，故输出是(1)'undefined'
+    name = 'Sanyue';
+}
+changeName();            //调用changeName函数，执行结果即(1)
+console.log(name);       //当前执行环境找到至全局作用环境，故输出是(2)'胡桃夹子'
