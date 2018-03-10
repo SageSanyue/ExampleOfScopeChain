@@ -1,0 +1,15 @@
+var a = 1
+function fn1(){
+  function fn3(){
+    //var a;由于变量提升，实际上下方第5句中'var a=4'中的a变量声明提升到此处，而赋值并未提升到这里。
+    function fn2(){
+      console.log(a)  //（1）此处打印的a在自己函数作用域内没有找到，便向其上一层父环境fn3()的变量对象中找。找到fn3()函数的句首便声明了变量a但并未赋值。故输出undefined。
+    }
+    fn2()
+    var a = 4 //a=4;变量提升后此处相当于只有'a=4;'留在原地
+  }
+  var a = 2
+  return fn3
+}
+var fn = fn1()
+fn() //输出undefined
