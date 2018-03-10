@@ -15,10 +15,10 @@ function changeName(){
     swapName();
     console.log(name1);        //(6)"xixi"
     console.log(name2);        //(7)"haha"
-    console.log(tempName);     //(8)Error
+    //console.log(tempName);     //(8)Error
 }
 changeName();          //执行依次打印(1)haha、(2)xixi、(3)xixi、(4)haha、(5)xixi、（6）"xixi"、(7)"haha"、(8)Error
 console.log(name1);    //(9)"xixi"
-console.log(name2);    //(10)Error
-console.log(tempName); //(11)Error 
+//console.log(name2);    //(10)Error
+//console.log(tempName); //(11)Error 
 </script>
