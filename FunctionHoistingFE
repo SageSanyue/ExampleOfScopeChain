@@ -1,0 +1,8 @@
+//函数表达式
+function myTest2(){
+    func();
+    var func = function(){
+        console.log('函数表达式不可提升');
+    }
+}
+myTest2();   //输出'Uncaught TypeError:func is not a function'
